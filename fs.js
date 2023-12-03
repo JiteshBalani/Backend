@@ -15,3 +15,16 @@ fs.appendFileSync("f4.txt", "This is to check the append function.");
 
 //Delete / Unlink
 fs.unlinkSync("f4.txt");
+
+// DIRECTORY | FOLDERS
+
+//Creating a new Folder/Directory
+// fs.mkdirSync("myDirectory"); 
+
+//Removing a folder
+// fs.rmdirSync("myDirectory");
+
+//How to check if the file/folder exists
+console.log(fs.existsSync("myDirectory"));
+
+// fs.writeFileSync("path.js", "");
