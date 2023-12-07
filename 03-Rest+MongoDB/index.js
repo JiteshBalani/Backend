@@ -39,6 +39,15 @@ app.put("products/:productId", (req,res) => {
     res.status(201).send("Successfully Updated!");
 });
 
+//PATCH Operations
+app.patch("/products/:productId", (req,res) => {
+    const productId = Number(req.params.productId);
+    const productIdx = products.findIndex(product => product.id === productId);
+    const product = products[productIdx];
+    products.splice(productIdx, 1, { ...product, ...req.body});
+    res.status(201).send("Successfully Updated!");
+})
+
 app.listen(8080, ()=> {
     console.log("Server started. You can access it on http://localhost:8080/")
 });
